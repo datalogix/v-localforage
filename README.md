@@ -5,7 +5,7 @@
 [![MIT License](https://img.shields.io/npm/l/@storage-js/vue-localforage.svg)](LICENSE)
 
 [![Build Status](https://travis-ci.org/storage-js/vue-localforage.svg?branch=master)](https://travis-ci.org/storage-js/vue-localforage)
-[![Build status](https://ci.appveyor.com/api/projects/status/dy8i5evw1iah5lkj/branch/master?svg=true)](https://ci.appveyor.com/project/storage-js/vue-localforage/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/dy8i5evw1iah5lkj/branch/master?svg=true)](https://ci.appveyor.com/project/cknow/vue-localforage/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/storage-js/vue-localforage/badge.svg?branch=master)](https://coveralls.io/github/storage-js/vue-localforage?branch=master)
 
 [![Code Climate](https://codeclimate.com/github/storage-js/vue-localforage/badges/gpa.svg)](https://codeclimate.com/github/storage-js/vue-localforage)
