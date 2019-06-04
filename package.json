@@ -1,6 +1,6 @@
 {
   "name": "@storage-js/vue-localforage",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.0-development",
   "description": "A plugin wrapped from localForage for Vue.js.",
   "keywords": [
     "vue",
@@ -41,7 +41,9 @@
     "pretest": "npm run lint",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "test": "npm run coverage",
-    "watch": "jest --watchAll"
+    "watch": "jest --watchAll",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "commitlint": {
     "extends": [
@@ -73,7 +75,9 @@
     "rollup-plugin-node-resolve": "latest",
     "rollup-plugin-uglify": "latest",
     "vue": "latest",
-    "vue-template-compiler": "latest"
+    "vue-template-compiler": "latest",
+    "semantic-release": "^15.13.12",
+    "travis-deploy-once": "^5.0.11"
   },
   "peerDependencies": {
     "vue": "^2.x"
