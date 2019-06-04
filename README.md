@@ -166,7 +166,7 @@ The schema version of your database.
 
 ### `description` (optional)
 
-- Default: ``
+- Default: `''`
 
 A description of the database.
 
@@ -178,4 +178,4 @@ A description of the database.
 
 ### Contributors
 
-- [Ricardo Gobbo de souza](https://github.com/ricardogobbosouza)
+- [Ricardo Gobbo de Souza](https://github.com/ricardogobbosouza)
