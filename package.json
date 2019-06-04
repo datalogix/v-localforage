@@ -61,6 +61,7 @@
     "@commitlint/config-conventional": "latest",
     "@vue/test-utils": "latest",
     "babel-jest": "latest",
+    "coveralls": "latest",
     "cross": "latest",
     "cross-env": "latest",
     "eslint": "latest",
@@ -75,9 +76,7 @@
     "rollup-plugin-node-resolve": "latest",
     "rollup-plugin-uglify": "latest",
     "vue": "latest",
-    "vue-template-compiler": "latest",
-    "semantic-release": "^15.13.12",
-    "travis-deploy-once": "^5.0.11"
+    "vue-template-compiler": "latest"
   },
   "peerDependencies": {
     "vue": "^2.x"
