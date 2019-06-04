@@ -10,7 +10,7 @@ notifications:
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=9395600a9197ece0068481cc325676e3542f1413d3e94658da41fed5a7cf05f9
+    - CC_TEST_REPORTER_ID=754d8da795dcfd341f07f12695d8b22cb213c48322d2a00f73c27ae6d6538c62
 
 node_js:
   - 12
