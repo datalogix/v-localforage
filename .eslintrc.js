@@ -1,6 +1,7 @@
 module.exports = {
-    root: true,
-    extends: [
-        '@cknow/eslint-config'
-    ]
-};
+  root: true,
+  extends: '@datalogix/eslint-config',
+  env: {
+    browser: true
+  }
+}

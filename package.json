@@ -1,5 +1,5 @@
 {
-  "name": "@storage-js/vue-localforage",
+  "name": "v-localforage",
   "version": "0.0.0-development",
   "description": "A plugin wrapped from localForage for Vue.js.",
   "keywords": [
@@ -9,9 +9,9 @@
     "storage",
     "storagejs"
   ],
-  "homepage": "https://github.com/storage-js/vue-localforage",
+  "homepage": "https://github.com/ricardogobbosouza/v-localforage",
   "bugs": {
-    "url": "https://github.com/storage-js/vue-localforage/issues",
+    "url": "https://github.com/ricardogobbosouza/v-localforage/issues",
     "email": "ricardogobbosouza@yahoo.com.br"
   },
   "license": "MIT",
@@ -23,12 +23,12 @@
   "files": [
     "dist"
   ],
-  "main": "dist/vue-localforage.cjs.js",
-  "module": "dist/vue-localforage.esm.js",
-  "browser": "dist/vue-localforage.umd.js",
+  "main": "dist/v-localforage.cjs.js",
+  "module": "dist/v-localforage.esm.js",
+  "browser": "dist/v-localforage.umd.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storage-js/vue-localforage.git"
+    "url": "https://github.com/ricardogobbosouza/v-localforage.git"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
@@ -39,11 +39,9 @@
     "prebuild": "rimraf dist/",
     "precoverage": "rimraf coverage/",
     "pretest": "npm run lint",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "report-coverage": "codecov",
     "test": "npm run coverage",
-    "watch": "jest --watchAll",
-    "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "watch": "jest --watchAll"
   },
   "commitlint": {
     "extends": [
@@ -56,13 +54,12 @@
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
-    "@cknow/eslint-config": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
+    "@datalogix/eslint-config": "latest",
     "@vue/test-utils": "latest",
     "babel-jest": "latest",
-    "coveralls": "latest",
-    "cross": "latest",
+    "codecov": "latest",
     "cross-env": "latest",
     "eslint": "latest",
     "eslint-plugin-jest": "latest",

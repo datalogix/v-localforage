@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
-	(global = global || self, global['vue-localforage'] = factory());
+	(global = global || self, global['v-localforage'] = factory());
 }(this, function () { 'use strict';
 
 	var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -2810,36 +2810,33 @@
 	});
 	});
 
-	var install = (Vue, options = {}) => {
-	    Vue.$localForage = localforage.createInstance(options);
-	    Vue.prototype.$localForage = Vue.$localForage;
+	const VueLocalforage = {
+	  install(Vue, options = {}) {
+	    Vue.$localforage = localforage.createInstance(options);
+	    Vue.prototype.$localforage = Vue.$localforage;
 
 	    if (!options.instances) {
-	        return;
+	      return
 	    }
 
 	    for (const instance of options.instances) {
-	        const name = instance.storeName || instance.name;
+	      const name = instance.storeName || instance.name;
 
-	        if (!name) {
-	            continue;
-	        }
+	      if (!name) {
+	        continue
+	      }
 
-	        Vue.$localForage[name] = localforage.createInstance(instance);
-	        Vue.prototype.$localForage[name] = Vue.$localForage[name];
+	      Vue.$localforage[name] = localforage.createInstance(instance);
+	      Vue.prototype.$localforage[name] = Vue.$localforage[name];
 	    }
+	  }
 	};
 
-	const VueLocalForage = {
-	    install
-	};
-
-	/* eslint-disable no-undef */
 	/* istanbul ignore next */
 	if (typeof window !== 'undefined' && window.Vue) {
-	    window.Vue.use(VueLocalForage);
+	  window.Vue.use(VueLocalforage);
 	}
 
-	return VueLocalForage;
+	return VueLocalforage;
 
 }));

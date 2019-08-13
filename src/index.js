@@ -1,14 +1,30 @@
-import install from './install';
+import localforage from 'localforage'
 
-const VueLocalForage = {
-    install
-};
+const VueLocalforage = {
+  install(Vue, options = {}) {
+    Vue.$localforage = localforage.createInstance(options)
+    Vue.prototype.$localforage = Vue.$localforage
 
-/* eslint-disable no-undef */
+    if (!options.instances) {
+      return
+    }
+
+    for (const instance of options.instances) {
+      const name = instance.storeName || instance.name
+
+      if (!name) {
+        continue
+      }
+
+      Vue.$localforage[name] = localforage.createInstance(instance)
+      Vue.prototype.$localforage[name] = Vue.$localforage[name]
+    }
+  }
+}
+
 /* istanbul ignore next */
 if (typeof window !== 'undefined' && window.Vue) {
-    window.Vue.use(VueLocalForage);
+  window.Vue.use(VueLocalforage)
 }
-/* eslint-enable no-undef */
 
-export default VueLocalForage;
+export default VueLocalforage

@@ -8,10 +8,6 @@ cache:
 notifications:
   email: false
 
-env:
-  global:
-    - CC_TEST_REPORTER_ID=754d8da795dcfd341f07f12695d8b22cb213c48322d2a00f73c27ae6d6538c62
-
 node_js:
   - 12
   - 11
@@ -22,18 +18,10 @@ node_js:
 install:
   - travis_retry npm install
 
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
 script:
   - node --version
   - npm --version
   - npm test
-
-after_script:
-- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 after_success:
   - npm run report-coverage
