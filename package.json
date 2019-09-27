@@ -1,18 +1,23 @@
 {
   "name": "v-localforage",
   "version": "0.0.0-development",
+  "private": false,
   "description": "A plugin wrapped from localForage for Vue.js.",
   "keywords": [
-    "vue",
-    "vuejs",
     "localforage",
     "storage",
-    "storagejs"
+    "storagejs",
+    "vue",
+    "vuejs"
   ],
   "homepage": "https://github.com/ricardogobbosouza/v-localforage",
   "bugs": {
     "url": "https://github.com/ricardogobbosouza/v-localforage/issues",
     "email": "ricardogobbosouza@yahoo.com.br"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ricardogobbosouza/v-localforage.git"
   },
   "license": "MIT",
   "author": {
@@ -26,21 +31,17 @@
   "main": "dist/v-localforage.cjs.js",
   "module": "dist/v-localforage.esm.js",
   "browser": "dist/v-localforage.umd.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ricardogobbosouza/v-localforage.git"
-  },
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
     "commit": "commit",
+    "precoverage": "rimraf coverage/",
     "coverage": "jest --coverage",
     "lint": "eslint src/ test/",
-    "posttest": "npm run build",
     "prebuild": "rimraf dist/",
-    "precoverage": "rimraf coverage/",
-    "pretest": "npm run lint",
     "report-coverage": "codecov",
+    "pretest": "npm run lint",
     "test": "npm run coverage",
+    "posttest": "npm run build",
     "watch": "jest --watchAll"
   },
   "commitlint": {
@@ -68,7 +69,6 @@
     "jest": "latest",
     "rimraf": "latest",
     "rollup": "latest",
-    "rollup-plugin-babel": "latest",
     "rollup-plugin-buble": "latest",
     "rollup-plugin-commonjs": "latest",
     "rollup-plugin-node-resolve": "latest",
@@ -82,7 +82,6 @@
   "engines": {
     "node": ">=8"
   },
-  "private": false,
   "publishConfig": {
     "access": "public"
   }
