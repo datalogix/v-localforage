@@ -21,7 +21,7 @@
 	    https://localforage.github.io/localForage
 	    (c) 2013-2017 Mozilla, Apache License 2.0
 	*/
-	(function(f){{module.exports=f();}})(function(){return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof commonjsRequire=="function"&&commonjsRequire;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw (f.code="MODULE_NOT_FOUND", f)}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r);}return n[o].exports}var i=typeof commonjsRequire=="function"&&commonjsRequire;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+	(function(f){{module.exports=f();}})(function(){return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof commonjsRequire=="function"&&commonjsRequire;if(!u&&a){ return a(o,!0); }if(i){ return i(o,!0); }var f=new Error("Cannot find module '"+o+"'");throw (f.code="MODULE_NOT_FOUND", f)}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r);}return n[o].exports}var i=typeof commonjsRequire=="function"&&commonjsRequire;for(var o=0;o<r.length;o++){ s(r[o]); }return s})({1:[function(_dereq_,module,exports){
 	(function (global){
 	var Mutation = global.MutationObserver || global.WebKitMutationObserver;
 
@@ -2483,16 +2483,18 @@
 	}
 
 	function extend() {
+	    var arguments$1 = arguments;
+
 	    for (var i = 1; i < arguments.length; i++) {
-	        var arg = arguments[i];
+	        var arg = arguments$1[i];
 
 	        if (arg) {
 	            for (var _key in arg) {
 	                if (arg.hasOwnProperty(_key)) {
 	                    if (isArray(arg[_key])) {
-	                        arguments[0][_key] = arg[_key].slice();
+	                        arguments$1[0][_key] = arg[_key].slice();
 	                    } else {
-	                        arguments[0][_key] = arg[_key];
+	                        arguments$1[0][_key] = arg[_key];
 	                    }
 	                }
 	            }
@@ -2810,8 +2812,10 @@
 	});
 	});
 
-	const VueLocalforage = {
-	  install(Vue, options = {}) {
+	var VueLocalforage = {
+	  install: function install(Vue, options) {
+	    if ( options === void 0 ) options = {};
+
 	    Vue.$localforage = localforage.createInstance(options);
 	    Vue.prototype.$localforage = Vue.$localforage;
 
@@ -2819,8 +2823,10 @@
 	      return
 	    }
 
-	    for (const instance of options.instances) {
-	      const name = instance.storeName || instance.name;
+	    for (var i = 0, list = options.instances; i < list.length; i += 1) {
+	      var instance = list[i];
+
+	      var name = instance.storeName || instance.name;
 
 	      if (!name) {
 	        continue
