@@ -1,4 +1,3 @@
-
 import { createLocalVue } from '@vue/test-utils'
 
 import VueLocalforage from '@/'
