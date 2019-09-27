@@ -4,8 +4,6 @@ import commonjs from 'rollup-plugin-commonjs'
 import { uglify } from 'rollup-plugin-uglify'
 import pkg from './package.json'
 
-const name = pkg.name.replace(/^.+\//u, '')
-
 export default [
   {
     input: 'src/index.js',
@@ -18,11 +16,17 @@ export default [
   {
     input: 'src/index.js',
     output: {
-      name,
+      name: pkg.name,
       file: pkg.browser,
       format: 'umd'
     },
     plugins: [
+      buble({
+        objectAssign: 'Object.assign',
+        transforms: {
+          dangerousForOf: true
+        }
+      }),
       resolve(),
       commonjs()
     ]
@@ -30,7 +34,7 @@ export default [
   {
     input: 'src/index.js',
     output: {
-      name,
+      name: pkg.name,
       file: pkg.browser.replace('.js', '.min.js'),
       format: 'umd'
     },
