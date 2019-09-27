@@ -1,5 +1,10 @@
 sudo: false
 
+os:
+  - linux
+  - osx
+  #- windows
+
 language: node_js
 
 cache:
@@ -10,9 +15,7 @@ notifications:
 
 node_js:
   - 12
-  - 11
   - 10
-  - 9
   - 8
 
 install:
